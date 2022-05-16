@@ -1,0 +1,44 @@
+.footer {
+    padding: 1%;
+}
+
+.footer__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer__row > p {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 13px;
+    background-color: rgb(226, 226, 226);
+    font-weight: 700;
+    margin: 5px;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+.footer__row > p:hover,
+.footer__row > h2:hover
+ {
+    transition: 300ms;
+    box-shadow: 5px 5px #888888;
+}
+
+.footer__row > h2 {
+    font-size: 15px;
+    text-align: center;
+    padding: 13px;
+    background-color: rgb(226, 226, 226);
+    font-weight: 700;
+    margin: 5px;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 20%;
+}

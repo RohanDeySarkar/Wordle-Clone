@@ -1,0 +1,20 @@
+.column {
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.column > p {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 20px 20px;
+    border-radius: 10%;
+    margin: 0 5px;
+    /* background-color: rgb(130, 130, 130); */
+    border: 1px solid rgb(195, 195, 195);
+    font-weight: 700;
+    color: rgb(72, 72, 72);
+    text-transform: capitalize;
+}

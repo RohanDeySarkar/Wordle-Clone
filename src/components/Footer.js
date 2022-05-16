@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
    addColValue,
    deleteVal,
-   enterVal
+   enterVal,
+   selectSolved,
 } from '../features/wordsSlice';
 
 function Footer() {
@@ -16,6 +17,8 @@ function Footer() {
 
     const [state, setState] = useState([]);
     const [counter, setCounter] = useState(0);
+
+    const solved = useSelector(selectSolved);
 
     const dispatch = useDispatch();
 
@@ -28,7 +31,7 @@ function Footer() {
                 {r1.map((letter) => 
                     <p
                         onClick={() => {
-                            if (counter < 5) {
+                            if (counter < 5 && solved == false) {
                                 setState([...state, letter])
                                 dispatch(addColValue([...state, letter]))
                                 setCounter(counter + 1)
@@ -44,7 +47,7 @@ function Footer() {
                 {r2.map((letter) => 
                     <p
                         onClick={() => {
-                            if (counter < 5) {
+                            if (counter < 5 && solved == false) {
                                 setState([...state, letter])
                                 dispatch(addColValue([...state, letter]))
                                 setCounter(counter + 1)
@@ -59,7 +62,7 @@ function Footer() {
             <div className='footer__row'>
                 <h2
                     onClick={() => {
-                        if (counter == 5) {
+                        if (counter == 5 && solved == false) {
                             setState([])
                             setCounter(0)
                             dispatch(enterVal())
@@ -72,7 +75,7 @@ function Footer() {
                 {r3.map((letter) => 
                     <p
                         onClick={() => {
-                            if (counter < 5) {
+                            if (counter < 5 && solved == false) {
                                 setState([...state, letter])
                                 dispatch(addColValue([...state, letter]))
                                 setCounter(counter + 1)
@@ -85,7 +88,7 @@ function Footer() {
 
                 <h2
                     onClick={() => {
-                        if (counter != 0) {
+                        if (counter != 0 && solved == false) {
                             state.pop();
                             setCounter(state.length);
                             setState(state);

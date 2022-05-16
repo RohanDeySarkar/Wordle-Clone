@@ -20,3 +20,17 @@
 .app__body  {
     padding: 2%;
 }
+
+.solved {
+
+}
+
+.solved > p {
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: rgb(65, 179, 255);
+    text-transform: uppercase;
+}

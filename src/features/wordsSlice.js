@@ -6,7 +6,13 @@ const wordsList = [
   "weary",
   "vague",
   "swing",
-  "rohan"
+  "rohan",
+  "being",
+  "binge",
+  "brown",
+  "crown",
+  "drown",
+  "heist"
 ]
 
 function random_item(items) {
@@ -15,6 +21,7 @@ function random_item(items) {
 
 const initialState = {
     word: random_item(wordsList),
+    // word: "rohan",
     colValues: [
       ["", "", "", "", ""],
       ["", "", "", "", ""],
@@ -31,7 +38,8 @@ const initialState = {
       3: {},
       4: {},
       5: {}
-    }
+    },
+    solved: false,
 };
 
 export const wordSlice = createSlice({
@@ -54,19 +62,29 @@ export const wordSlice = createSlice({
       let currIdx = 0
       let correctWord = state.word
 
+      let countGreen = 0
+
       while (currIdx < 5){
         if (correctWord.includes(state.colValues[state.idx][currIdx]) == true) {
+          // Yellow
           state.guesses[state.idx][currIdx] = "#FEFF51"
           if (state.colValues[state.idx][currIdx] == correctWord[currIdx]) {
-            state.guesses[state.idx][currIdx] = "#95FF51" 
+            // Green
+            state.guesses[state.idx][currIdx] = "#95FF51"
+            countGreen += 1 
           }
         } else {
+          // Gray
           state.guesses[state.idx][currIdx] = "#D5D5D5" 
         }
         currIdx += 1
       }
-        
-      state.idx = state.idx + 1
+      
+      if (countGreen == 5) {
+        state.solved = true
+      } else {
+        state.idx = state.idx + 1
+      }
     },
     
     deleteVal: (state, action) => {
@@ -95,5 +113,8 @@ export const { enterVal, addColValue, deleteVal } = wordSlice.actions;
 
 export const selectGuesses = (state) => state.words.guesses;
 export const selectColValues = (state) => state.words.colValues;
+export const selectSolved = (state) => state.words.solved;
+export const selectIdx = (state) => state.words.idx;
+export const selectWord= (state) => state.words.word;
 
 export default wordSlice.reducer;

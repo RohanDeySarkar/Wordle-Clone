@@ -10,6 +10,10 @@ import {
    selectSolved,
 } from '../features/wordsSlice';
 
+import checkWord from "check-if-word";
+
+const words = checkWord('en');
+
 function Footer() {
     const r1 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
     const r2 = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
@@ -62,10 +66,19 @@ function Footer() {
             <div className='footer__row'>
                 <h2
                     onClick={() => {
-                        if (counter == 5 && solved == false) {
+                        let isWord = words.check(state.join(""));
+                        // console.log(isWord)
+                        if (counter == 5 && solved == false && isWord == true) {
                             setState([])
                             setCounter(0)
                             dispatch(enterVal())
+                        } else {
+                            if (solved == false) {
+                                alert("Not a Word !!")
+                            } else {
+                                alert("Already Solved :)")
+                            }
+                            
                         }
                     }}
                 >

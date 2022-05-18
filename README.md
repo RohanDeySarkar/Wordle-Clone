@@ -1,6 +1,6 @@
 Deployed here  -> https://rohandeysarkar.github.io/Wordle-Clone/
 
-![](https://github.com/RohanDeySarkar/Wordle-Clone/blob/master/Screenshot%20(377).png?raw=true)
+![](https://github.com/RohanDeySarkar/Wordle-Clone/blob/master/Screenshot%20(378).png?raw=true)
 
 # Getting Started with Create React App and Redux
 

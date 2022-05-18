@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const wordsList = [
+  "sober",
   "actor",
   "alert",
   "alter",

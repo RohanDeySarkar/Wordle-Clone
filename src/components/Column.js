@@ -10,7 +10,6 @@ import {
 function Column({rowNum}) {
     const colValues = useSelector(selectColValues);
     const guesses = useSelector(selectGuesses);
-    
 
     const currCol = colValues[rowNum]
     const guess = guesses[rowNum]
